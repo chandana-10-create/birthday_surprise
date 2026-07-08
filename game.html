@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find My Heart ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffd6e7,#fff0f5);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+text-align:center;
+}
+
+h1{
+color:#e91e63;
+margin-bottom:25px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,90px);
+gap:15px;
+justify-content:center;
+}
+
+.box{
+width:90px;
+height:90px;
+background:white;
+border-radius:15px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:40px;
+cursor:pointer;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+transition:.3s;
+}
+
+.box:hover{
+transform:scale(1.05);
+}
+
+#msg{
+margin-top:25px;
+font-size:22px;
+color:#d81b60;
+font-weight:bold;
+display:none;
+}
+
+button{
+margin-top:20px;
+padding:15px 30px;
+background:#ff4081;
+color:white;
+border:none;
+border-radius:30px;
+font-size:18px;
+cursor:pointer;
+display:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>❤️ Find My Heart ❤️</h1>
+
+<div class="grid">
+
+<div class="box" onclick="wrong(this)">🎁</div>
+<div class="box" onclick="wrong(this)">🌹</div>
+<div class="box" onclick="wrong(this)">🎂</div>
+
+<div class="box" onclick="wrong(this)">🧸</div>
+<div class="box" onclick="correct(this)">❓</div>
+<div class="box" onclick="wrong(this)">🌸</div>
+
+<div class="box" onclick="wrong(this)">✨</div>
+<div class="box" onclick="wrong(this)">🎈</div>
+<div class="box" onclick="wrong(this)">🍫</div>
+
+</div>
+
+<div id="msg">
+❤️ You found my heart... ❤️
+<br><br>
+Because my heart has always belonged to you. 🥹❤️
+</div>
+
+<button id="next" onclick="window.location.href='final.html'">
+Continue ❤️
+</button>
+
+</div>
+
+<script>
+
+function wrong(box){
+box.innerHTML="🤍";
+}
+
+function correct(box){
+
+box.innerHTML="❤️";
+
+document.getElementById("msg").style.display="block";
+
+document.getElementById("next").style.display="inline-block";
+
+}
+
+</script>
+
+</body>
+</html>

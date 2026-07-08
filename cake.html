@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Birthday Cake 🎂</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ffd6e7,#fff5f8);
+overflow:hidden;
+}
+
+.container{
+text-align:center;
+}
+
+h1{
+color:#ff2d75;
+font-size:38px;
+margin-bottom:20px;
+}
+
+p{
+font-size:20px;
+color:#555;
+margin-bottom:30px;
+}
+
+.cake{
+font-size:150px;
+cursor:pointer;
+transition:.5s;
+animation:bounce 2s infinite;
+}
+
+.cake:hover{
+transform:scale(1.1);
+}
+
+@keyframes bounce{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+}
+
+#message{
+display:none;
+margin-top:30px;
+font-size:26px;
+color:#e91e63;
+font-weight:bold;
+}
+
+button{
+display:none;
+margin-top:25px;
+padding:15px 35px;
+background:#ff4d94;
+color:white;
+border:none;
+border-radius:30px;
+font-size:18px;
+cursor:pointer;
+}
+@keyframes fall{
+
+0%{
+transform:translateY(-50px) rotate(0deg);
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎂 Make a Birthday Wish 🎂</h1>
+
+<p>Tap the cake to cut it ❤️</p>
+
+<div class="cake" onclick="cutCake()">
+🎂
+</div>
+
+<div id="message">
+🎉 Happy Birthday, My Love! ❤️
+</div>
+
+<button id="nextBtn" onclick="window.location.href='game.html'">
+Next Surprise ❤️
+</button>
+</div>
+
+<script>
+
+function cutCake(){
+
+document.querySelector(".cake").innerHTML="🍰";
+
+document.querySelector("h1").innerHTML="🎉 Happy Birthday! 🎉";
+
+document.querySelector("p").innerHTML="May all your wishes come true... ❤️";
+
+document.getElementById("message").style.display="block";
+
+document.getElementById("nextBtn").style.display="inline-block";
+
+}
+
+</script>
+
+</body>
+
+</html>
+<script>
+
+function cutCake(){
+
+document.querySelector(".cake").innerHTML="🍰";
+
+document.querySelector("h1").innerHTML="🎉 Happy Birthday! 🎉";
+
+document.querySelector("p").innerHTML="May all your wishes come true... ❤️";
+
+document.getElementById("message").style.display="block";
+
+document.getElementById("nextBtn").style.display="inline-block";
+
+/* Confetti Hearts */
+
+for(let i=0;i<30;i++){
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.style.position="fixed";
+heart.style.left=Math.random()*100+"vw";
+heart.style.top="-50px";
+heart.style.fontSize=(20+Math.random()*20)+"px";
+heart.style.animation="fall 4s linear forwards";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),4000);
+
+}
+
+}
+
+</script>
