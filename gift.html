@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surprise ❤️</title>
+
+<style>
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+font-family:Arial,sans-serif;
+overflow:hidden;
+}
+
+.container{
+text-align:center;
+color:white;
+}
+
+.gift{
+font-size:120px;
+animation:bounce 1s infinite;
+cursor:pointer;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+}
+
+h2{
+margin-top:20px;
+}
+
+button{
+padding:15px 30px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4d6d;
+cursor:pointer;
+margin-top:20px;
+}
+
+.message{
+display:none;
+font-size:22px;
+padding:20px;
+}
+
+.heart{
+position:fixed;
+font-size:25px;
+animation:float 5s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="gift" onclick="openGift()">🎁</div>
+
+<div class="message" id="msg">
+<h1>Hi Charanuuuuuuu ❤️</h1>
+
+<p>
+I made this surprise just for you. 💖<br><br>
+I hope this brings a smile to your face. 😊<br><br>
+— with all my love ,chanduu❤️
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function openGift(){
+
+document.querySelector(".gift").style.display="none";
+document.getElementById("msg").style.display="block";
+
+for(let i=0;i<30;i++){
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.className="heart";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(3+Math.random()*3)+"s";
+
+document.body.appendChild(heart);
+
+}
+setTimeout(function(){
+window.location.href="gallery.html";
+},5000);
+}
+
+</script>
+
+</body>
+</html>
